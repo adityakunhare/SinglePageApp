@@ -1,7 +1,8 @@
 <template>
     <div>
         <div v-if="loading">
-          Loading...
+          <!-- Loading... -->
+          <img src="/storage/images/loading.gif">
         </div>
         <div v-else>
             <div class="flex justify-between">

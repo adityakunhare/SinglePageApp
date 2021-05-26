@@ -11,7 +11,7 @@
         </div>
         <input type="text" @focus="focus=true" class="w-64 mr-6 bg-gray-200 border border-gray-400 pl-8 pr-3 py-1 rounded-full text-sm focus:outline-none focus:border-blue-500 focus:shadow focus:bg-gray-100" placeholder="Search here..." id="searchTerm" v-model="searchTerm" @input="search">
             
-
+       <transition name="bounce"  >
             <div v-if="focus" class=" absolute  bg-blue-900 text-white rounded-lg p-4 w-96 right-0 mr-6 mt-2 shadow z-20">
                 <div v-if="results == 0">No results found for '{{ searchTerm }}'</div>
                 <div v-for="result in results"    @click="focus=false" >
@@ -26,6 +26,7 @@
                     </router-link>
                 </div>
             </div>
+       </transition>
         </div>
     </div>
 </template>
@@ -62,6 +63,24 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  /* 100% {
+    transform: scale(1);
+  } */
+}
+</style>
 
 </style>

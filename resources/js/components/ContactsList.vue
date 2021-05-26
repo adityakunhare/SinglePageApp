@@ -1,6 +1,9 @@
 <template>
      <div>
-        <div v-if="loading">Loading...</div>
+        <div v-if="loading">
+            <!-- Loading... -->
+             <img class="m-auto pt-12" src="/storage/images/loading.gif">
+            </div>
         <div v-else>
             <div v-if="contacts.length ===0">
                     <p>No Contacts Yet <router-link to="/contacts/create">Get Started</router-link></p>

@@ -18,9 +18,9 @@
                 <label for="email" class="uppercase text-blue-500 text-xs font-bold  absolute pl-3 pt-2 ">E-mail</label>
 
                 <div class="">
-                    <input id="email" type="email"
+                    <input  name = "email" id="email" type="text"
                         class="pt-8 w-full bg-blue-800 text-gray-100 outline-none focus:bg-blue-700 rounded p-3"
-                        name="email" value="{{ old('email') }}" autocomplete="email" autofocus
+                        value="{{ old('email') }}"  autofocus
                         placeholder="your@email.com">
 
                     @error('email')
